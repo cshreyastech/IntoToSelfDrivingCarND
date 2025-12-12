@@ -1,0 +1,66 @@
+2.8.16 Continuous Probability Distributions
+Characteristics of a Continuous Distribution
+- The y values must be greater than or equal to 0.
+- The probability of a specifc x value occurring is qual to 0
+- The probability of an event occurring between two values or x is equatl to the area under the curve between those two x values.
+- The total area under the probability density function curve is equal to 1.
+
+2.8.16 Density function
+For a continuous probability distribution, the y-axus reoresents a probability density function. A density function is just an equation to mathematically represent a continuous distribution.
+
+2.10 Gaussian distributions
+- Continiuous vs Discrete
+- List of continious distributions: https://en.wikipedia.org/wiki/List_of_probability_distributions#Continuous_distributions
+
+- population refers to the entire set of all data points. Like if you were measuring people's weights, then the population would be all people in the world.
+- sample refers to a part of the population. In the weights example, you might take a random sample of the population since it would be practically impossible to measure the weights of all humans.
+- mean is the average value, which in this case would be the average weight of all humans.
+- standard deviation measures the spread in the data. Does the data tend to hover around the mean, or is the data more spread out?
+
+2.11 Robot Localization
+2.11.35 Sense and Move
+    - Localization: Iteration of Sense and Move
+    - Initial belief -> Sense -> Move. Repeat Sense and move
+    - Measure of information (Entropy) that the distribution has: -E p(Xi) log p(Xi)
+        - Move step makes the Entropy go down
+        - Measurement step makes the Entropy go up
+
+2.11.39 Localization Summary
+we learnt that localization matintains a function of all possible places where a road might be, where each cell has an associated probability value. The measurement update function, or "sense", is nothing else but a product in which we take those probability values and multiply them up or down depending on the exact measurement. Because the product might violate the fact that probabilities add up to 1, there was a product followed by normalization. Motion was a convolution. This world itself might sound criptic, but what it really means is for each possible location after the motion, we reverse engineered the situation and guessed where the world might have come from and then collected, we added, the correspoding probabilities. Something as simple as multiplication and addition solves all of localization.
+
+
+Belief = Probability
+Sense = Product followed by Normaliztion
+Move = Convolutin (Addition)
+
+2..11.44 Bayes Rule
+Measurments
+X -> grid cells, Z -> measurement
+
+-
+p (Xi/Z) = p(z|Xi) P(Xi)
+          -
+alpha = E p(Xi | Z)
+                    -
+p(Xi|Z) = (1/alpha) p(Xi|Z)
+
+p(z) = E p(Z/Xi) P(Xi)
+       i
+       
+p(z|Xi) - > Measurement probability
+P(Xi) -> Prior
+
+3. Matrices
+3.2 Kalman Filters
+3.2.2 Tracking info
+Kalman Filter
+- Continues state
+- Unimodal localation
+
+Monte Carlo Localization
+- Discrete
+- Multi-modal
+
+Partimcle filter
+- Continious
+- Multi-modal
