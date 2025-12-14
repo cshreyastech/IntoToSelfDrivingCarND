@@ -64,3 +64,46 @@ Monte Carlo Localization
 Partimcle filter
 - Continious
 - Multi-modal
+
+5 Performance C++
+-----------------
+5.1 Into To Optimization
+------------------------
+5.1.3 Intro to Computer Hardware
+-----
+
+CPU
+Control Unit
+Arithmetic / Logical Unit
+
+RAM
+
+main.cpp -> Compiler -> Machine code
+
+cd demo_machine_code
+g++ -c machine_code.cpp
+xxd -b machine_code.o
+
+1.5.6 Assembly Language
+C++ -> Assembly language -> machine code
+Assembly language: Human readable
+
+cd ~/home/workspace/demo_machine_code
+g++ -S machine_code.cpp -> produces Assembly language code
+
+
+
+///////////////
+#include <ctime>
+
+std::clock_t start;
+double duration;
+
+start = std::clock();
+
+function_name(var1, var2);
+
+duration = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+
+std::cout << "duration milliseconds initialize beliefs " << 1000 * duration << '\n';
+///////////////
